@@ -1,0 +1,32 @@
+{
+  "name": "grabbasepoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:mock:account": "nodemon ./mocks/accountServer.js",
+    "start:mock:funds": "nodemon ./mocks/fundsServer.js",
+    "start:mock:policy": "nodemon ./mocks/policiesServer.js",
+    "start:mock:all": "concurrently \"npm run start:mock:account\" \"npm run start:mock:funds\" \"npm run start:mock:policy\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aishwarya423/grabbasePOC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aishwarya423/grabbasePOC/issues"
+  },
+  "homepage": "https://github.com/aishwarya423/grabbasePOC#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
