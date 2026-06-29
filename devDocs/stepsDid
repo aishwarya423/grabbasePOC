@@ -32,3 +32,13 @@ Air-gapped operation
 2026-06-29T14:42:01.523967Z  WARN To send telemetry to the Grafbase Platform, provide a valid graph-ref and access token
 2026-06-29T14:42:01.531432Z  WARN Directive definitions are ignored.
 2026-06-29T14:42:01.539699Z  INFO GraphQL endpoint exposed at http://127.0.0.1:4000/graphql
+
+--next step---
+
+grafbase extension init --type resolver rest
+
+
+useful commands
+grafbase extension install          
+grafbase extension build       
+grafbase extension publish         

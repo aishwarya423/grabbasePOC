@@ -1,0 +1,41 @@
+services:
+  accounts-rest:
+    build:
+      context: ./mock-rest-api
+    environment:
+      SERVICE_NAME: accounts
+      PORT: 3000
+      EXPECTED_API_KEY: ${ACCOUNTS_API_KEY:-accounts-local-key}
+    ports:
+      - "3001:3000"
+
+  policies-rest:
+    build:
+      context: ./mock-rest-api
+    environment:
+      SERVICE_NAME: policies
+      PORT: 3000
+      EXPECTED_API_KEY: ${POLICIES_API_KEY:-policies-local-key}
+    ports:
+      - "3002:3000"
+
+  funds-rest:
+    build:
+      context: ./mock-rest-api
+    environment:
+      SERVICE_NAME: funds
+      PORT: 3000
+      EXPECTED_API_KEY: ${FUNDS_API_KEY:-funds-local-key}
+    ports:
+      - "3003:3000"
+      
+  graphiql:
+    build:
+      context: ./explorer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - grafbase
+
+volumes:
+  redis-data:

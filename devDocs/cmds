@@ -1,0 +1,7 @@
+grafbase extension init --type resolver rest
+grafbase extension init --type resolver echo
+
+grafbase extension install
+
+grafbase dev -c graphbase.toml --graph-overrides grafbase-overrides.toml
+grafbase dev -c graphbase.toml -o grafbase-overrides.toml
