@@ -1,0 +1,35 @@
+use grafbase_sdk::{
+    ResolverExtension,
+    types::{AuthorizedOperationContext, Configuration, Error, ResolvedField, Response, SubgraphHeaders, SubgraphSchema, Variables},
+};
+
+#[derive(ResolverExtension)]
+struct Rest {
+    config: Config
+}
+
+// Configuration in the TOML for this extension
+#[derive(serde::Deserialize)]
+struct Config {
+    #[serde(default)]
+    key: Option<String>
+}
+
+impl ResolverExtension for Rest {
+    fn new(subgraph_schemas: Vec<SubgraphSchema>, config: Configuration) -> Result<Self, Error> {
+        let config: Config = config.deserialize()?;
+        Ok(Self { config })
+    }
+
+    fn resolve(
+        &mut self,
+        ctx: &AuthorizedOperationContext,
+        prepared: &[u8],
+        headers: SubgraphHeaders,
+        variables: Variables,
+    ) -> Result<Response, Error> {
+        // field which must be resolved. The prepared bytes can be customized to store anything you need in the operation cache.
+        let field = ResolvedField::try_from(prepared)?;
+        Ok(Response::null())
+    }
+}

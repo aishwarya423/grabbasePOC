@@ -1,0 +1,3 @@
+graph-overrides.toml
+[subgraphs.demo-rest]
+schema_path = "books.graphql"

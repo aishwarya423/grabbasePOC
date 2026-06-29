@@ -2,7 +2,33 @@ npm install grafbase
 
 curl -fsSL https://grafbase.com/downloads/gateway | bash
 
+-------nextt step ----------
+install grafbase-gateway
 grafbase-gateway --version
 then 
 run: ./grafbase-gateway --version
 output: Grafbase Gateway 0.53.5
+
+-----next step-----
+Air-gapped operation
+./grafbase-gateway \
+  --config /path/to/grafbase.toml \
+  --schema /path/to/federated-schema.graphql \
+  --listen-address 127.0.0.1:4000
+
+  > replace path above , and add grafbase.toml file and federated-schema.graphql file in the same directory as grafbase-gateway
+
+  ./grafbase-gateway \
+  --config ./grafbase.toml \
+  --schema ./federated-schema.graphql \
+  --listen-address 127.0.0.1:4000
+
+  >output
+2026-06-29T14:39:31.579561Z  INFO Grafbase Gateway 0.53.5
+2026-06-29T14:39:31.579600Z  WARN To send telemetry to the Grafbase Platform, provide a valid graph-ref
+
+>output
+ 2026-06-29T14:42:01.523942Z  INFO Grafbase Gateway 0.53.5
+2026-06-29T14:42:01.523967Z  WARN To send telemetry to the Grafbase Platform, provide a valid graph-ref and access token
+2026-06-29T14:42:01.531432Z  WARN Directive definitions are ignored.
+2026-06-29T14:42:01.539699Z  INFO GraphQL endpoint exposed at http://127.0.0.1:4000/graphql

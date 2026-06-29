@@ -1,0 +1,54 @@
+//REFERENCE FILE 
+
+extend schema
+    @link(url: "https://spec.apollo.dev/federation/v2.5")
+    @link(
+        url: "https://extensions.grafbase.com/extensions/rest/0.3.3"
+        import: ["@rest"]
+    )
+    @restEndpoint(
+        name: "restCountries"
+        baseUrl:"https://restcountries.com/v3.1"
+    ){
+        query: Query
+        mutation: Mutation
+        subscription: Subscription
+}
+
+type BookDetails {
+    bibKey: String
+    infoUrl: String
+    preview: String
+    previewUrl: String
+    thumbnailUrl: String
+
+}
+
+enum PreviewType {
+    none
+    partial
+    full
+}
+
+type Country {
+    name: String
+    region: String
+    tlds: [String!]
+}
+
+type Query {
+    listAllCountries: [Country!]! 
+    @rest(
+        method: GET
+        endpoint: "restCountries"
+        path: "/all"
+        section: "[.[] | { name: .name.official, region: .region, tlds: .tld }]"
+        )
+    countryByName(name: String!): [Country!]! 
+    @rest(
+        method: GET
+        endpoint: "restCountries"
+        path: "/name/{{ args.name }}"
+        section: ".[0] | { name: .name.official, region: .region, tlds: .tld }]"
+        )
+}
