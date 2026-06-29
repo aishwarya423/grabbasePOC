@@ -1,0 +1,8 @@
+npm install grafbase
+
+curl -fsSL https://grafbase.com/downloads/gateway | bash
+
+grafbase-gateway --version
+then 
+run: ./grafbase-gateway --version
+output: Grafbase Gateway 0.53.5
