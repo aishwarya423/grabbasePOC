@@ -17,4 +17,4 @@ allow_private_network = true
 rest = "0.3.3"
 
 [extension.rest]
-path = "./build"
+path = "./rest/build"

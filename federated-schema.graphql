@@ -69,9 +69,9 @@ type FundHolding
 scalar join__FieldSet
 
 enum join__Graph {
-  ACCOUNTS @join__graph(name: "accounts", url: "http://accounts-subgraph:4000/graphql")
-  FUNDS @join__graph(name: "funds", url: "http://funds-subgraph:4000/graphql")
-  POLICIES @join__graph(name: "policies", url: "http://policies-subgraph:4000/graphql")
+  ACCOUNTS @join__graph(name: "accounts", url: "http://localhost:4001/graphql")
+  FUNDS    @join__graph(name: "funds",    url: "http://localhost:4003/graphql")
+  POLICIES @join__graph(name: "policies", url: "http://localhost:4002/graphql")
 }
 
 scalar link__Import

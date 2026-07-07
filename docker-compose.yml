@@ -29,13 +29,13 @@ services:
     ports:
       - "3003:3000"
       
-  graphiql:
-    build:
-      context: ./explorer
-    ports:
-      - "8080:8080"
-    depends_on:
-      - grafbase
+  # graphiql:
+  #   build:
+  #     context: ./explorer
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - grafbase
 
 volumes:
   redis-data:

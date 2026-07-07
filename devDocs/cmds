@@ -5,3 +5,15 @@ grafbase extension install
 
 grafbase dev -c graphbase.toml --graph-overrides grafbase-overrides.toml
 grafbase dev -c graphbase.toml -o grafbase-overrides.toml
+
+
+grafbase extension build
+>Error: A working rustup installation is required to build extensions. Please install it from https://rustup.rs/ before continuing.
+
+grafbase extension install ../grafbase-extension-demo
+
+start the gateway: grafbase gateway or gateway dev
+
+curl http://localhost:4000/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query":"{ __typename }"}'
