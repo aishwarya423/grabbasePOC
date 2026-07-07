@@ -1,0 +1,8 @@
+version = "1"
+
+[[extensions]]
+name = "rest"
+version = "0.5.2"
+
+[extensions.rest]
+path = "./grafbase_extensions/rest/build"

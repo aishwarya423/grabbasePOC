@@ -1,0 +1,5 @@
+"""
+Fill in here the directives and types that the extension needs.
+"""
+directive @restConfiguration(arg1: String) repeatable on SCHEMA
+directive @restDirective on FIELD_DEFINITION

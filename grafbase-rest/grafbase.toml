@@ -1,0 +1,6 @@
+[graph]
+path = "schema.graphql"
+
+[extensions.rest]
+version = "0.5.2"
+path = "/Users/aishwaryapalarapu/Desktop/aishprojects/grabbasePOC/grafbase-rest/grafbase_extensions/rest/build"
